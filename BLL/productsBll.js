@@ -56,7 +56,11 @@ class Products{
        catch(err){
         console.log(err);
        }
-
+    }
+    async getCategories(){
+        let products =  Connection.myDb.collection('products');
+        let category = await products.distinct('category');
+        return category
     }
 }
 

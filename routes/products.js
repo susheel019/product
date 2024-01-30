@@ -69,5 +69,15 @@ router.get('/category/:category' , (req , res) =>{
     console.log(err);
   })
 })
+router.get('/getAllCategory' , (req , res)=>{
+  let p = new Products();
+  var categories = p.getCategories();
+  categories.then( (category)=>{
+    res.json(category)
+  } , (err)=>{
+    console.log(err);
+  })
+  
+})
 
 module.exports = router;
