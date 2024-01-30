@@ -49,7 +49,7 @@ class Products{
         try{
         let product = await products.find({}).toArray()
         console.log(product);
-        var data = product[0].products.filter(e => e.category === p)
+        var data = product.filter(e => e.category === p)
         console.log(data);
         return data;
        }
